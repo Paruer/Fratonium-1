@@ -42,6 +42,9 @@
                                                         <integer key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="questionSelectedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vI2-0P-Kh4"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSU-5S-ZsV" userLabel="secondButton">
                                                 <rect key="frame" x="10" y="308" width="394" height="139"/>
@@ -54,6 +57,9 @@
                                                         <integer key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="questionSelectedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xas-Fr-Mb9"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="RFr-h0-sxs" userLabel="thirdButton">
                                                 <rect key="frame" x="10" y="457" width="394" height="139"/>
@@ -66,6 +72,9 @@
                                                         <integer key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="questionSelectedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hkb-gn-53l"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.7953116206517804" green="0.9351197955887709" blue="0.97851854562759399" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -129,6 +138,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="Pb3-fP-Soj" id="I8N-CL-QcH"/>
+                        <outlet property="categoryLabel" destination="puv-DR-wpT" id="aFd-yw-nS8"/>
+                        <outlet property="firstButton" destination="Ho1-Kj-jLw" id="MrL-dP-Ifh"/>
+                        <outlet property="resetButton" destination="SN3-Rp-Tmn" id="yh8-W5-Hyf"/>
+                        <outlet property="scoreLabel" destination="4fV-QZ-cUl" id="0Qj-na-kwJ"/>
+                        <outlet property="secondButton" destination="gSU-5S-ZsV" id="l6a-7n-3Dn"/>
+                        <outlet property="thirdButton" destination="RFr-h0-sxs" id="QpE-4J-DXe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
