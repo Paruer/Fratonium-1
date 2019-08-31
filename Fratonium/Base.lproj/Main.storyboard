@@ -21,18 +21,24 @@
                             <stackView opaque="NO" contentMode="bottom" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cfQ-KP-SIH" userLabel="PageStackView">
                                 <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4k-PN-UKm" userLabel="categoryLabel">
+                                        <rect key="frame" x="154.66666666666666" y="0.0" width="104.66666666666666" height="28.666666666666668"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SaO-Oi-nGr" userLabel="QuestionStackView">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="606"/>
+                                        <rect key="frame" x="0.0" y="38.666666666666686" width="414" height="567.33333333333326"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puv-DR-wpT" userLabel="categoryLabel">
-                                                <rect key="frame" x="10" y="10" width="394" height="139"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puv-DR-wpT" userLabel="questionLabel">
+                                                <rect key="frame" x="10" y="10.000000000000014" width="394" height="129.33333333333337"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ho1-Kj-jLw" userLabel="firstButton">
-                                                <rect key="frame" x="10" y="159" width="394" height="139"/>
+                                                <rect key="frame" x="10" y="149.33333333333331" width="394" height="129.33333333333331"/>
                                                 <color key="backgroundColor" red="0.31515931759999999" green="0.33615375600000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -47,7 +53,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSU-5S-ZsV" userLabel="secondButton">
-                                                <rect key="frame" x="10" y="308" width="394" height="139"/>
+                                                <rect key="frame" x="10" y="288.66666666666663" width="394" height="129.33333333333337"/>
                                                 <color key="backgroundColor" red="0.31515931759999999" green="0.33615375600000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -62,7 +68,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="RFr-h0-sxs" userLabel="thirdButton">
-                                                <rect key="frame" x="10" y="457" width="394" height="139"/>
+                                                <rect key="frame" x="10" y="428" width="394" height="129.33333333333337"/>
                                                 <color key="backgroundColor" red="0.31515931759999999" green="0.33615375600000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -140,8 +146,9 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="Pb3-fP-Soj" id="I8N-CL-QcH"/>
-                        <outlet property="categoryLabel" destination="puv-DR-wpT" id="aFd-yw-nS8"/>
+                        <outlet property="categoryLabel" destination="b4k-PN-UKm" id="I7z-od-14I"/>
                         <outlet property="firstButton" destination="Ho1-Kj-jLw" id="MrL-dP-Ifh"/>
+                        <outlet property="questionLabel" destination="puv-DR-wpT" id="XYh-Fd-j6I"/>
                         <outlet property="resetButton" destination="SN3-Rp-Tmn" id="yh8-W5-Hyf"/>
                         <outlet property="scoreLabel" destination="4fV-QZ-cUl" id="0Qj-na-kwJ"/>
                         <outlet property="secondButton" destination="gSU-5S-ZsV" id="l6a-7n-3Dn"/>
