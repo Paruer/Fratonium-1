@@ -40,13 +40,17 @@ class ViewController: UIViewController {
         super.init(coder: aDecoder)
     }
     
+    //--------------------------------------
     //MARK: ViewController functions
+    //--------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
         displayNextQuestion()
     }
     
+    //--------------------------------------
     //MARK: UI actions
+    //--------------------------------------
     @IBAction func questionSelected(sender: UIButton) {
         if let q = assessment.currentQuestion {
             if sender == firstButton {
@@ -58,16 +62,25 @@ class ViewController: UIViewController {
             }
             displayNextQuestion()
         }
-        //TODO: If the current question is nil we won't do anything for now.  In the future we will transition to the finished view
+        //TODO: If the current question is nil we have a genuine error case since the display next question function is supposed
+        // to transition to the final view.  Need to figure out proper error response here
     }
     
+    @IBAction func resetAssessment(sender: UIButton) {
+        assessment.resetAssessment()
+        score = 0
+        scoreLabel.text = String(score)
+        displayNextQuestion()
+    }
+    
+    //--------------------------------------
     //MARK: Helper functions
+    //--------------------------------------
     func addToScore (_ value: Int) {
         score += value
         scoreLabel.text = String(score)
     }
 
-    //TODO: Figure out if and how to properly handle nil questions
     func displayNextQuestion() {
         if let q = assessment.getNextQuestion() {
             categoryLabel.text = assessment.currentCategory.name
@@ -76,6 +89,7 @@ class ViewController: UIViewController {
             secondButton.setTitle(q.answers[1].text, for: .normal)
             thirdButton.setTitle(q.answers[2].text, for: .normal)
         } else {
+            //TODO: For now show a message box.  In future this is the the proper place to transition to the final view.
             let alertController = UIAlertController(title: "Out of questions", message: "No more questions", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alertController, animated: true, completion: nil)

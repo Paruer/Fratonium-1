@@ -21,24 +21,27 @@
                             <stackView opaque="NO" contentMode="bottom" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cfQ-KP-SIH" userLabel="PageStackView">
                                 <rect key="frame" x="0.0" y="20" width="414" height="716"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4k-PN-UKm" userLabel="categoryLabel">
-                                        <rect key="frame" x="154.66666666666666" y="0.0" width="104.66666666666666" height="28.666666666666668"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4k-PN-UKm" userLabel="categoryLabel">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="EFJ-DU-n8X"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SaO-Oi-nGr" userLabel="QuestionStackView">
-                                        <rect key="frame" x="0.0" y="38.666666666666686" width="414" height="567.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="60" width="414" height="546"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puv-DR-wpT" userLabel="questionLabel">
-                                                <rect key="frame" x="10" y="10.000000000000014" width="394" height="129.33333333333337"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <rect key="frame" x="10" y="10" width="394" height="124"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ho1-Kj-jLw" userLabel="firstButton">
-                                                <rect key="frame" x="10" y="149.33333333333331" width="394" height="129.33333333333331"/>
+                                                <rect key="frame" x="10" y="144" width="394" height="124"/>
                                                 <color key="backgroundColor" red="0.31515931759999999" green="0.33615375600000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -53,7 +56,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSU-5S-ZsV" userLabel="secondButton">
-                                                <rect key="frame" x="10" y="288.66666666666663" width="394" height="129.33333333333337"/>
+                                                <rect key="frame" x="10" y="278" width="394" height="124"/>
                                                 <color key="backgroundColor" red="0.31515931759999999" green="0.33615375600000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -68,7 +71,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="RFr-h0-sxs" userLabel="thirdButton">
-                                                <rect key="frame" x="10" y="428" width="394" height="129.33333333333337"/>
+                                                <rect key="frame" x="10" y="412" width="394" height="124"/>
                                                 <color key="backgroundColor" red="0.31515931759999999" green="0.33615375600000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -119,6 +122,9 @@
                                                         <integer key="value" value="20"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="resetAssessmentWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4kR-tN-5o4"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -129,7 +135,9 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="OYf-Y2-RJp" firstAttribute="bottom" secondItem="cfQ-KP-SIH" secondAttribute="bottomMargin" id="4hs-BW-2It"/>
+                                    <constraint firstItem="b4k-PN-UKm" firstAttribute="trailing" secondItem="cfQ-KP-SIH" secondAttribute="trailingMargin" id="Kmu-Nx-gME"/>
                                     <constraint firstItem="SaO-Oi-nGr" firstAttribute="trailing" secondItem="cfQ-KP-SIH" secondAttribute="trailingMargin" id="PSJ-xt-oEJ"/>
+                                    <constraint firstItem="b4k-PN-UKm" firstAttribute="leading" secondItem="cfQ-KP-SIH" secondAttribute="leadingMargin" id="QKL-eM-Yku"/>
                                     <constraint firstItem="SaO-Oi-nGr" firstAttribute="leading" secondItem="cfQ-KP-SIH" secondAttribute="leadingMargin" id="RbF-H5-kzG"/>
                                     <constraint firstItem="OYf-Y2-RJp" firstAttribute="leading" secondItem="cfQ-KP-SIH" secondAttribute="leadingMargin" id="v4F-LN-N7t"/>
                                 </constraints>

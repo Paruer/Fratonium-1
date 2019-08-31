@@ -13,11 +13,11 @@ class Assessment {
     var categoryIterator: IndexingIterator<[Category]>
     var currentCategory: Category
     var questionIterator: IndexingIterator<[Question]>
-    var currentQuestion: Question?  //TODO: This optional is problematic elsewhere. Figure out how to get rid of it
+    var currentQuestion: Question? //nil is a signal to users that we have iterated through all the categories and questions
     
     init (categories: [Category]) {
         self.categories = categories
-        categoryIterator = self.categories.makeIterator()
+        categoryIterator = categories.makeIterator()
         currentCategory = categoryIterator.next()!
         questionIterator = currentCategory.questions.makeIterator()
     }
@@ -46,6 +46,12 @@ class Assessment {
                 return nil
             }
         }
+    }
+    
+    func resetAssessment() {
+        categoryIterator = categories.makeIterator()
+        currentCategory = categoryIterator.next()!
+        questionIterator = currentCategory.questions.makeIterator()
     }
 }
 
