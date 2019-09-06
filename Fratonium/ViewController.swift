@@ -21,7 +21,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var resetButton: UIButton!
     
     //MARK: Programmatic properties
-    var score: Int = 0
     // assessment is optional because it relies on a JSON file that could fail to load. We check during viewDidAppear
     // to make sure it is initialized so other parts of the program can use forced unwrapping.
     var assessment: Assessment?
@@ -60,11 +59,11 @@ class ViewController: UIViewController {
     @IBAction func questionSelected(sender: UIButton) {
         if let q = assessment!.currentQuestion {
             if sender == firstButton {
-                addToScore(q.answers[0].value)
+                q.selectAnswer(0)
             } else if sender == secondButton {
-                addToScore(q.answers[1].value)
+                q.selectAnswer(1)
             } else if sender == thirdButton {
-                addToScore(q.answers[2].value)
+                q.selectAnswer(2)
             }
             displayNextQuestion()
         }
@@ -74,33 +73,39 @@ class ViewController: UIViewController {
     
     @IBAction func resetAssessment(sender: UIButton) {
         assessment!.resetAssessment()
-        score = 0
-        scoreLabel.text = String(score)
+        displayNextQuestion()
+    }
+    
+    @IBAction func backToStart(sender: UIButton) {
+        assessment!.backToStart()
         displayNextQuestion()
     }
     
     //--------------------------------------
     //MARK: Helper functions
     //--------------------------------------
-    func addToScore (_ value: Int) {
-        score += value
-        scoreLabel.text = String(score)
-    }
-
     func displayNextQuestion() {
         if let q = assessment!.getNextQuestion() {
             categoryLabel.text = assessment!.currentCategory.name
             questionLabel.text = q.name
-            firstButton.setTitle(q.answers[0].text, for: .normal)
-            secondButton.setTitle(q.answers[1].text, for: .normal)
-            thirdButton.setTitle(q.answers[2].text, for: .normal)
+            let buttons = [firstButton, secondButton, thirdButton]
+            for i in 0...2 {
+                let button = buttons[i]!
+                let answer = q.answers[i]
+                button.setTitle(answer.text, for: .normal)
+                if let val = answer.selected, val {
+                    button.backgroundColor = UIColor.green
+                } else {
+                    button.backgroundColor = UIColor.blue
+                }
+            }
         } else {
             //TODO: For now show a message box.  In future this is the the proper place to transition to the final view.
             let alertController = UIAlertController(title: "Out of questions", message: "No more questions", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alertController, animated: true, completion: nil)
         }
+        scoreLabel.text = String(assessment!.computeScore())
     }
-
 }
 

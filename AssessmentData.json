@@ -10,7 +10,7 @@
             "value": 1
         },{
             "text": "Headache, fever, cold, toothache",
-            "value": 3
+            "value": 2
         }]
     },{
         "name": "Medication",
@@ -37,7 +37,7 @@
             "value": 1
         },{
             "text": "Less than 300 hours flight time",
-            "value": 3
+            "value": 2
         }]
     },{
         "name": "Last flight in type",
