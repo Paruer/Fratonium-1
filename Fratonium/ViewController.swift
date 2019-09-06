@@ -22,21 +22,18 @@ class ViewController: UIViewController {
     
     //MARK: Programmatic properties
     var score: Int = 0
-    var assessment: Assessment
+    // assessment is optional because it relies on a JSON file that could fail to load. We check during viewDidLoad
+    // to make sure it is initialized so other parts of the program can use forced unwrapping.
+    var assessment: Assessment?
     
     required init?(coder aDecoder: NSCoder) {
-        let answer1 = Answer(text: "one", value: 1)
-        let answer2 = Answer(text: "two", value: 3)
-        let answer3 = Answer(text: "three", value: 5)
-        
-        let question1 = Question(name: "Question one", answers: [answer1, answer2, answer3])
-        let question2 = Question(name: "Question two", answers: [answer1, answer2, answer3])
-        
-        let category1 = Category(name: "Category one", questions: [question1, question2])
-        let category2 = Category(name: "Category two", questions: [question1, question2])
-        
-        self.assessment = Assessment(categories: [category1, category2])
-        
+        do {
+            try assessment = Assessment()
+        } catch {
+            // If we are unable to create an assessment then we will leave here with it nil.  Since the UI is not initialized at this point
+            // we can't display anything to the user so leave that for viewDidLoad
+            assessment = nil
+        }
         super.init(coder: aDecoder)
     }
     
@@ -45,14 +42,20 @@ class ViewController: UIViewController {
     //--------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
-        displayNextQuestion()
+        if assessment != nil {
+            displayNextQuestion()
+        } else {
+            let alertController = UIAlertController(title: "Initialization error", message: "Unable to load assessment data", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alertController, animated: true, completion: nil)
+        }
     }
     
     //--------------------------------------
     //MARK: UI actions
     //--------------------------------------
     @IBAction func questionSelected(sender: UIButton) {
-        if let q = assessment.currentQuestion {
+        if let q = assessment!.currentQuestion {
             if sender == firstButton {
                 addToScore(q.answers[0].value)
             } else if sender == secondButton {
@@ -67,7 +70,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func resetAssessment(sender: UIButton) {
-        assessment.resetAssessment()
+        assessment!.resetAssessment()
         score = 0
         scoreLabel.text = String(score)
         displayNextQuestion()
@@ -82,8 +85,8 @@ class ViewController: UIViewController {
     }
 
     func displayNextQuestion() {
-        if let q = assessment.getNextQuestion() {
-            categoryLabel.text = assessment.currentCategory.name
+        if let q = assessment!.getNextQuestion() {
+            categoryLabel.text = assessment!.currentCategory.name
             questionLabel.text = q.name
             firstButton.setTitle(q.answers[0].text, for: .normal)
             secondButton.setTitle(q.answers[1].text, for: .normal)

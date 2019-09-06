@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CEA0073231B14E7003EF294 /* AssessmentData.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA0072231B14E7003EF294 /* AssessmentData.json */; };
 		4CEAFFAD231966FF003EF294 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEAFFAC231966FF003EF294 /* AppDelegate.swift */; };
 		4CEAFFAF231966FF003EF294 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEAFFAE231966FF003EF294 /* ViewController.swift */; };
 		4CEAFFB2231966FF003EF294 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CEAFFB0231966FF003EF294 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4CEA0072231B14E7003EF294 /* AssessmentData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AssessmentData.json; sourceTree = "<group>"; };
 		4CEAFFA9231966FF003EF294 /* Fratonium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fratonium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CEAFFAC231966FF003EF294 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CEAFFAE231966FF003EF294 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +42,7 @@
 		4CEAFFA0231966FF003EF294 = {
 			isa = PBXGroup;
 			children = (
+				4CEA0072231B14E7003EF294 /* AssessmentData.json */,
 				4CEAFFAB231966FF003EF294 /* Fratonium */,
 				4CEAFFAA231966FF003EF294 /* Products */,
 			);
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CEAFFB723196701003EF294 /* LaunchScreen.storyboard in Resources */,
+				4CEA0073231B14E7003EF294 /* AssessmentData.json in Resources */,
 				4CEAFFB423196701003EF294 /* Assets.xcassets in Resources */,
 				4CEAFFB2231966FF003EF294 /* Main.storyboard in Resources */,
 			);
