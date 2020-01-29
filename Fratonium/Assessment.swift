@@ -9,6 +9,7 @@
 import Foundation
 
 class Assessment {
+    private let assessmentData: AssessmentData
     private let categories: [Category]
     private var categoryIterator: IndexingIterator<[Category]>
     private var questionIterator: IndexingIterator<[Question]>
@@ -16,6 +17,8 @@ class Assessment {
     
     var currentCategory: Category
     var currentQuestion: Question? //nil is a signal to users that we have iterated through all the categories and questions
+    let caution: Int
+    let highRisk: Int
 
     /**
      The initializer throws an error if it cannot load and parse the JSON containing the assessment data
@@ -25,8 +28,11 @@ class Assessment {
             let url = Bundle.main.url(forResource: "AssessmentData", withExtension: "json")
             let json = try Data(contentsOf: url!)
             let decoder = JSONDecoder()
-            categories = try decoder.decode([Category].self, from: json)
+            assessmentData = try decoder.decode(AssessmentData.self, from: json)
 
+            caution = assessmentData.caution
+            highRisk = assessmentData.highRisk
+            categories = assessmentData.categories
             categoryIterator = categories.makeIterator()
             currentCategory = categoryIterator.next()!
             questionIterator = currentCategory.questions.makeIterator()
@@ -95,6 +101,10 @@ class Assessment {
         return score
     }
     
+    func getAssessmentName() -> String {
+        return assessmentData.name
+    }
+    
     //=====================================
     // MARK: Private methods
     //=====================================
@@ -141,5 +151,14 @@ class Question: Codable {
 class Category: Codable {
     var name: String
     var questions: [Question]
+}
+
+/** Risk is assessed based upon the caution and highRisk thresholds.  LOW RISK is anything below caution.
+    The CAUTION range is bewteen caution and highRisk.  Anything above highRisk is a HIGH RISK operation*/
+class AssessmentData: Codable {
+    var name: String
+    var caution: Int
+    var highRisk: Int
+    var categories: [Category]
 }
 

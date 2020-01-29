@@ -1,55 +1,61 @@
-[{  "name": "Personal conditions",
-    "questions" :
-    [{
-        "name": "Physical",
-        "answers":
-        [{  "text": "No problems.  Physically in shape",
-            "value": 0
+{
+    "name": "FRATonium default",
+    "caution": 1,
+    "highRisk": 4,
+    "categories" :
+    [{  "name": "Personal conditions",
+        "questions" :
+        [{
+            "name": "Physical",
+            "answers":
+            [{  "text": "No problems.  Physically in shape",
+                "value": 0
+            },{
+                "text": "Nuisance. Not completely in shape",
+                "value": 1
+            },{
+                "text": "Headache, fever, cold, toothache",
+                "value": 2
+            }]
         },{
-            "text": "Nuisance. Not completely in shape",
-            "value": 1
-        },{
-            "text": "Headache, fever, cold, toothache",
-            "value": 2
+            "name": "Medication",
+            "answers":
+            [{  "text": "No medications in last 24 hours",
+                "value": 0
+            },{
+                "text": "Over the counter medication",
+                "value": 1
+            },{
+                "text": "Prescription medication. Attention and driving impairing medication",
+                "value": 2
+            }]
         }]
-    },{
-        "name": "Medication",
-        "answers":
-        [{  "text": "No medications in last 24 hours",
-            "value": 0
+    },{  "name": "Recency",
+        "questions" :
+        [{
+            "name": "Total flight time",
+            "answers":
+            [{  "text": "Over 1000 hours flight time",
+                "value": 0
+            },{
+                "text": "Between 300 and 1000 hours flight time",
+                "value": 1
+            },{
+                "text": "Less than 300 hours flight time",
+                "value": 2
+            }]
         },{
-            "text": "Over the counter medication",
-            "value": 1
-        },{
-            "text": "Prescription medication. Attention and driving impairing medication",
-            "value": 2
+            "name": "Last flight in type",
+            "answers":
+            [{  "text": "Within 1 month",
+                "value": 0
+            },{
+                "text": "Between 1 and 3 months",
+                "value": 1
+            },{
+                "text": "Greater than 3 months",
+                "value": 2
+            }]
         }]
     }]
-},{  "name": "Recency",
-    "questions" :
-    [{
-        "name": "Total flight time",
-        "answers":
-        [{  "text": "Over 1000 hours flight time",
-            "value": 0
-        },{
-            "text": "Between 300 and 1000 hours flight time",
-            "value": 1
-        },{
-            "text": "Less than 300 hours flight time",
-            "value": 2
-        }]
-    },{
-        "name": "Last flight in type",
-        "answers":
-        [{  "text": "Within 1 month",
-            "value": 0
-        },{
-            "text": "Between 1 and 3 months",
-            "value": 1
-        },{
-            "text": "Greater than 3 months",
-            "value": 2
-        }]
-    }]
-}]
+}
