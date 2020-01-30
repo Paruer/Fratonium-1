@@ -29,17 +29,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel! // The label on the result page
     @IBOutlet weak var assessmentNameLabel: UILabel! // On the start view
     
+    //--------------------------------------
     //MARK: Programmatic properties
-    // assessment is optional because it relies on a JSON file that could fail to load. We check during viewDidAppear
-    // to make sure it is initialized so other parts of the program can use forced unwrapping.
+    //--------------------------------------
+    /** assessment is optional because it relies on a JSON file that could fail to load. We check during viewDidAppear to make sure it is initialized so other parts of the program can use forced unwrapping. */
     var assessment: Assessment?
+    var currentQuestion: Question?
     
+    /** assessment must be initialized here otherwise we get a complier error. Since we have no way to alert the user at this point we have to be
+        able to leave init with nil assessment*/
     required init?(coder aDecoder: NSCoder) {
         do {
             try assessment = Assessment()
         } catch {
-            // If we are unable to create an assessment then we will leave here with it nil.  Since the UI is not initialized at this point
-            // we can't display anything to the user so leave that for later
             assessment = nil
         }
         super.init(coder: aDecoder)
@@ -48,18 +50,6 @@ class ViewController: UIViewController {
     //--------------------------------------
     //MARK: ViewController functions
     //--------------------------------------
-    /** Used viewDidAppear so that we can show an error message.  viewDidLoad is too early in the lifecycle to show the popup.
-        Note that this is where self.assessment is checked for nil so that it does not need to be done elsewhere **/
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        if assessment == nil {
-            let alertController = UIAlertController(title: "Initialization error", message: "Unable to load assessment data", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alertController, animated: true, completion: nil)
-        } else {
-            assessmentNameLabel.text = "Currently installed assessment:\n\n" + assessment!.getAssessmentName()
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +57,27 @@ class ViewController: UIViewController {
         pageView.isHidden = true
         resultView.isHidden = true
     }
+
+    /** Used viewDidAppear so that we can show an error message.  viewDidLoad is too early in the lifecycle to show the popup.
+        Note that this is where self.assessment is checked for nil so that it does not need to be done elsewhere **/
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        do {
+            try assessment = Assessment()
+        } catch {
+            // If we are unable to create an assessment then we will leave here with it nil.  Since the UI is not initialized at this point
+            // we can't display anything to the user so leave that for later
+            assessment = nil
+        }
+        if assessment == nil {
+            let alertController = UIAlertController(title: "Initialization error", message: "Unable to load assessment data", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alertController, animated: true, completion: nil)
+        } else {
+            assessmentNameLabel.text = "Currently installed assessment:\n\n\(assessment!.getAssessmentName())"
+        }
+    }
+
     
     //--------------------------------------
     //MARK: UI actions
@@ -79,7 +90,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func questionSelected(sender: UIButton) {
-        if let q = assessment!.currentQuestion {
+        if let q = currentQuestion {
             if sender == firstButton {
                 q.selectAnswer(0)
             } else if sender == secondButton {
@@ -116,6 +127,7 @@ class ViewController: UIViewController {
     //--------------------------------------
     func displayNextQuestion() {
         if let q = assessment!.getNextQuestion() {
+            currentQuestion = q
             categoryLabel.text = assessment!.currentCategory.name
             questionLabel.text = q.name
             let buttons = [firstButton, secondButton, thirdButton]
@@ -131,6 +143,7 @@ class ViewController: UIViewController {
             }
         } else {
             // There are no more questions so show the results view
+            currentQuestion = nil
             resultView.isHidden = false
             startView.isHidden = true
             pageView.isHidden = true

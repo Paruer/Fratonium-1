@@ -13,10 +13,9 @@ class Assessment {
     private let categories: [Category]
     private var categoryIterator: IndexingIterator<[Category]>
     private var questionIterator: IndexingIterator<[Question]>
+    // answers is created for convenience in computing score and resetting results
     private var answers: [Answer] = []
-    
     var currentCategory: Category
-    var currentQuestion: Question? //nil is a signal to users that we have iterated through all the categories and questions
     let caution: Int
     let highRisk: Int
 
@@ -29,7 +28,6 @@ class Assessment {
             let json = try Data(contentsOf: url!)
             let decoder = JSONDecoder()
             assessmentData = try decoder.decode(AssessmentData.self, from: json)
-
             caution = assessmentData.caution
             highRisk = assessmentData.highRisk
             categories = assessmentData.categories
@@ -51,7 +49,6 @@ class Assessment {
     
     func getNextQuestion() -> Question? {
         if let question = questionIterator.next() {
-            currentQuestion = question
             return question
         } else {
             //Out of questions for this category so get a new category and question iterator
@@ -59,17 +56,14 @@ class Assessment {
                 currentCategory = category
                 questionIterator = currentCategory.questions.makeIterator()
                 if let question = questionIterator.next() {
-                    currentQuestion = question
                     return question
                 } else {
                     //An empty question set for a new category.  Something is wrong
                     //TODO: error handler
-                    currentQuestion = nil
                     return nil
                 }
             } else {
                 //We're out of categories so return a nil to signal to the app
-                currentQuestion = nil
                 return nil
             }
         }
