@@ -21,62 +21,27 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414.00000000000011" height="736"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="center" axis="vertical" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="hy9-nd-QW7" userLabel="StartStackView">
-                                <rect key="frame" x="57" y="93" width="300" height="550"/>
+                            <stackView opaque="NO" contentMode="center" axis="vertical" distribution="equalSpacing" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="hy9-nd-QW7" userLabel="StartStackView">
+                                <rect key="frame" x="57" y="136.66666666666663" width="300" height="463"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="cG1-ga-vw1">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="63"/>
                                     </imageView>
-                                    <view opaque="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="aIQ-xD-KFS" userLabel="LabelsView">
-                                        <rect key="frame" x="0.0" y="200" width="300" height="150"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currently installed assessment" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OiY-97-xRZ">
-                                                <rect key="frame" x="0.0" y="20" width="300" height="50"/>
-                                                <color key="backgroundColor" name="manatee"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="Th9-mA-Eke"/>
-                                                    <constraint firstAttribute="width" constant="300" id="dhZ-FD-HSF"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="assessment name missing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2u-ve-Bw8" userLabel="assessmentNameLabel">
-                                                <rect key="frame" x="0.0" y="80" width="300" height="50"/>
-                                                <color key="backgroundColor" name="manatee"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="300" id="vqJ-6n-QVg"/>
-                                                    <constraint firstAttribute="height" constant="50" id="zZR-WE-QZs"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="assessment name missing" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="O2u-ve-Bw8" userLabel="assessmentNameLabel">
+                                        <rect key="frame" x="0.0" y="163.00000000000003" width="300" height="149.99999999999997"/>
+                                        <color key="backgroundColor" name="manatee"/>
                                         <constraints>
-                                            <constraint firstItem="OiY-97-xRZ" firstAttribute="top" secondItem="aIQ-xD-KFS" secondAttribute="top" constant="20" symbolic="YES" id="AoM-Hp-hah"/>
-                                            <constraint firstItem="O2u-ve-Bw8" firstAttribute="centerX" secondItem="aIQ-xD-KFS" secondAttribute="centerX" id="e6P-aI-Gdb"/>
-                                            <constraint firstAttribute="bottom" secondItem="O2u-ve-Bw8" secondAttribute="bottom" constant="20" symbolic="YES" id="iA3-P6-QMw"/>
-                                            <constraint firstItem="OiY-97-xRZ" firstAttribute="centerX" secondItem="aIQ-xD-KFS" secondAttribute="centerX" id="mfz-HP-ZLt"/>
+                                            <constraint firstAttribute="height" constant="150" id="sCC-nb-qBg"/>
                                         </constraints>
-                                    </view>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="MyI-Dx-jPa" userLabel="ButtonsStackView">
-                                        <rect key="frame" x="0.0" y="400" width="300" height="150"/>
+                                        <rect key="frame" x="0.0" y="413" width="300" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPq-Ty-g1e">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
-                                                <color key="backgroundColor" name="kombuGreen"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="300" id="LFu-G0-6yQ"/>
-                                                    <constraint firstAttribute="height" constant="50" id="X8G-Gh-Pav"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <state key="normal" title="Load new assessment">
-                                                    <color key="titleColor" name="manatee"/>
-                                                </state>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3x8-ok-5ML">
-                                                <rect key="frame" x="0.0" y="100" width="300" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
                                                 <color key="backgroundColor" name="kombuGreen"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="9fz-tq-x1w"/>
@@ -84,8 +49,13 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <state key="normal" title="Start assessment">
-                                                    <color key="titleColor" name="manatee"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="startAssessmentWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="svx-PT-7fL"/>
                                                 </connections>
@@ -116,9 +86,9 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ho1-Kj-jLw" userLabel="firstButton">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ho1-Kj-jLw" userLabel="firstButton">
                                                 <rect key="frame" x="10" y="149" width="394" height="129"/>
-                                                <color key="backgroundColor" name="mediumGreen"/>
+                                                <color key="backgroundColor" name="mauve"/>
                                                 <state key="normal" title="Button">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
@@ -131,7 +101,7 @@
                                                     <action selector="questionSelectedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vI2-0P-Kh4"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSU-5S-ZsV" userLabel="secondButton">
+                                            <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSU-5S-ZsV" userLabel="secondButton">
                                                 <rect key="frame" x="10" y="288" width="394" height="129"/>
                                                 <color key="backgroundColor" name="mediumGreen"/>
                                                 <state key="normal" title="Button">
@@ -146,7 +116,7 @@
                                                     <action selector="questionSelectedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xas-Fr-Mb9"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="RFr-h0-sxs" userLabel="thirdButton">
+                                            <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="RFr-h0-sxs" userLabel="thirdButton">
                                                 <rect key="frame" x="10" y="427" width="394" height="129"/>
                                                 <color key="backgroundColor" name="mediumGreen"/>
                                                 <state key="normal" title="Button">
@@ -253,16 +223,21 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXh-ro-CYk" userLabel="doneButton">
-                                        <rect key="frame" x="132" y="546" width="150" height="50"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="57" y="546" width="300" height="50"/>
+                                        <color key="backgroundColor" name="kombuGreen"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="3NK-oq-syX"/>
+                                            <constraint firstAttribute="width" constant="300" id="3NK-oq-syX"/>
                                             <constraint firstAttribute="height" constant="50" id="lEo-ij-2Uq"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="Done">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="assessmentCompleteWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nTG-kY-3xi"/>
                                         </connections>
@@ -292,12 +267,6 @@
                             <constraint firstItem="7mU-7w-XQJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yRD-PJ-nZ4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="cfQ-KP-SIH"/>
-                                <exclude reference="7mU-7w-XQJ"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="assessmentNameLabel" destination="O2u-ve-Bw8" id="1rM-S4-0Ed"/>
@@ -311,7 +280,6 @@
                         <outlet property="resultView" destination="7mU-7w-XQJ" id="1i6-Q2-Fy4"/>
                         <outlet property="scoreLabel" destination="4fV-QZ-cUl" id="0Qj-na-kwJ"/>
                         <outlet property="secondButton" destination="gSU-5S-ZsV" id="l6a-7n-3Dn"/>
-                        <outlet property="startLabelView" destination="aIQ-xD-KFS" id="fTM-6R-z8I"/>
                         <outlet property="startView" destination="hy9-nd-QW7" id="d4A-4o-aiM"/>
                         <outlet property="thirdButton" destination="RFr-h0-sxs" id="QpE-4J-DXe"/>
                     </connections>
@@ -331,6 +299,9 @@
             <color red="0.23921568627450981" green="0.25098039215686274" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="manatee">
+            <color red="0.5607843137254902" green="0.61176470588235299" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mauve">
             <color red="0.5607843137254902" green="0.61176470588235299" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="mediumGreen">

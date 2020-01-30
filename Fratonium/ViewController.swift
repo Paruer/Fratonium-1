@@ -57,7 +57,7 @@ class ViewController: UIViewController {
             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alertController, animated: true, completion: nil)
         } else {
-            assessmentNameLabel.text = assessment!.getAssessmentName()
+            assessmentNameLabel.text = "Currently installed assessment:\n\n" + assessment!.getAssessmentName()
         }
     }
     
@@ -66,10 +66,6 @@ class ViewController: UIViewController {
         startView.isHidden = false
         pageView.isHidden = true
         resultView.isHidden = true
-        /* did not work
-        startLabelView.backgroundColor = UIColor.lightGray
-        startLabelView.alpha = 0.8
-         */
     }
     
     //--------------------------------------
@@ -128,9 +124,9 @@ class ViewController: UIViewController {
                 let answer = q.answers[i]
                 button.setTitle(answer.text, for: .normal)
                 if let val = answer.selected, val {
-                    button.backgroundColor = UIColor.green
+                    button.backgroundColor = UIColor.init(named: "mediumGreen")
                 } else {
-                    button.backgroundColor = UIColor.blue
+                    button.backgroundColor = UIColor.init(named: "mauve")
                 }
             }
         } else {

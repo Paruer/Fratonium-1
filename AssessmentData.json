@@ -6,7 +6,7 @@
     [{  "name": "Personal conditions",
         "questions" :
         [{
-            "name": "Physical",
+            "name": "General health",
             "answers":
             [{  "text": "No problems.  Physically in shape",
                 "value": 0
