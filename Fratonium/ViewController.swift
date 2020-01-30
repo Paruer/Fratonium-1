@@ -67,6 +67,7 @@ class ViewController: UIViewController {
             let alertController = UIAlertController(title: "Initialization error", message: "Unable to load assessment data", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alertController, animated: true, completion: nil)
+            //TODO: Close app after OK selected
         } else {
             assessmentNameLabel.text = "Currently installed assessment:\n\n\(assessment!.getAssessmentName())"
         }

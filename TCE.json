@@ -1,0 +1,118 @@
+{
+"name": "TCEnergy Patrol",
+"caution": 4,
+"highRisk": 8,
+"categories" :
+[{  "name": "Degraded visual environment (DVE)",
+    "questions" :
+    [{
+        "name": "Aircraft instrumentation",
+        "answers":
+        [{  "text": "IFR",
+            "value": 0
+        },{
+            "text": "VFR certification. GPS and VORs available",
+            "value": 1
+        },{
+            "text": "Plain VFR",
+            "value": 2
+        }]
+    },{
+        "name": "IFR training and currency",
+        "answers":
+        [{  "text": "IFR rated AND within 1 month recurrency",
+            "value": 0
+        },{
+            "text": "IFR or DVE practical training within 3 months",
+            "value": 1
+        },{
+            "text": "VFR rated or IFR/DVE training more than 3 months",
+            "value": 2
+        }]
+    },{
+        "name": "Recoveries from unusual attitudes training",
+        "answers":
+        [{  "text": "Within 1 month",
+            "value": 0
+        },{
+            "text": "Between 1 and 3 months",
+            "value": 1
+        },{
+            "text": "Over 3 months",
+            "value": 2
+        }]
+    },{
+        "name": "VFR navigation",
+        "answers":
+        [{  "text": "Planned with consideration to VORs, AND, GPS available",
+            "value": 0
+        },{
+            "text": "Over-flight of a rural, unpopulated area or large expanse of water. GPS or VORs available",
+            "value": 1
+        },{
+            "text": "The navigation will be by map and visual reference only",
+            "value": 2
+        }]
+    },{
+        "name": "Obstacle separation",
+        "answers":
+        [{  "text": "Flight altitude 1000 ft above the highest obtacle",
+            "value": 0
+        },{
+            "text": "Flight altitude close to the highest obstacle",
+            "value": 1
+        },{
+            "text": "Flight below the highest obstacle",
+            "value": 2
+        }]
+    },{
+        "name": "Terrain texture",
+        "answers":
+        [{  "text": "Well defined reconigzable texture (cities, lakes, coastlines)",
+            "value": 0
+        },{
+            "text": "Some landmarks available",
+            "value": 1
+        },{
+            "text": "Over-flight of a rural, unpopulated area or large expanse of water",
+            "value": 2
+        }]
+    },{
+        "name": "Time of flight",
+        "answers":
+        [{  "text": "Day",
+            "value": 0
+        },{
+            "text": "Dawn or dusk. Night with well illuminated visual references (cities, landmarks, coastlines)",
+            "value": 1
+        },{
+            "text": "Night with few illuminated visual references or over water",
+            "value": 2
+        }]
+    },{
+        "name": "Meteorological conditions",
+        "answers":
+        [{  "text": "Better tham 5000 and 5m",
+            "value": 0
+        },{
+            "text": "5 to 8m visibility OR cloud base between 1500 and 2500 ft",
+            "value": 1
+        },{
+            "text": "At 3m visibility and cloud base at 700ft.",
+            "value": 2
+        }]
+    },{
+        "name": "Rain/snow",
+        "answers":
+        [{  "text": "No rain/snow",
+            "value": 0
+        },{
+            "text": "Light rain/snow",
+            "value": 1
+        },{
+            "text": "Heavy showers/snow, thunderstorms, frozen rain",
+            "value": 2
+        }]
+    }]
+}]
+}

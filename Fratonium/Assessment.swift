@@ -9,6 +9,8 @@
 import Foundation
 
 class Assessment {
+    //private let jsonFilename: String = "Test"
+    private let jsonFilename: String = "TCE"
     private let assessmentData: AssessmentData
     private let categories: [Category]
     private var categoryIterator: IndexingIterator<[Category]>
@@ -24,7 +26,7 @@ class Assessment {
     */
     init () throws {
         do {
-            let url = Bundle.main.url(forResource: "AssessmentData", withExtension: "json")
+            let url = Bundle.main.url(forResource: jsonFilename, withExtension: "json")
             let json = try Data(contentsOf: url!)
             let decoder = JSONDecoder()
             assessmentData = try decoder.decode(AssessmentData.self, from: json)

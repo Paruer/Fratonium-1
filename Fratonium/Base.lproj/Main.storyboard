@@ -67,11 +67,11 @@
                             <stackView opaque="NO" contentMode="bottom" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cfQ-KP-SIH" userLabel="PageStackView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4k-PN-UKm" userLabel="categoryLabel">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4k-PN-UKm" userLabel="categoryLabel">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                         <color key="backgroundColor" name="darkGreen"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="EFJ-DU-n8X"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Hwh-Gm-5L3"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <nil key="textColor"/>
@@ -82,11 +82,11 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puv-DR-wpT" userLabel="questionLabel">
                                                 <rect key="frame" x="10" y="10" width="394" height="129"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ho1-Kj-jLw" userLabel="firstButton">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Ho1-Kj-jLw" userLabel="firstButton">
                                                 <rect key="frame" x="10" y="149" width="394" height="129"/>
                                                 <color key="backgroundColor" name="mauve"/>
                                                 <state key="normal" title="Button">
@@ -101,7 +101,7 @@
                                                     <action selector="questionSelectedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vI2-0P-Kh4"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSU-5S-ZsV" userLabel="secondButton">
+                                            <button opaque="NO" alpha="0.94999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="gSU-5S-ZsV" userLabel="secondButton">
                                                 <rect key="frame" x="10" y="288" width="394" height="129"/>
                                                 <color key="backgroundColor" name="mediumGreen"/>
                                                 <state key="normal" title="Button">
