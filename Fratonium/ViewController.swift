@@ -69,7 +69,14 @@ class ViewController: UIViewController {
             present(alertController, animated: true, completion: nil)
             //TODO: Close app after OK selected
         } else {
-            assessmentNameLabel.text = "Currently installed assessment:\n\n\(assessment!.getAssessmentName())"
+            // Set the name of the assessment on the start view
+            let text = NSMutableAttributedString(string: "Currently installed assessment:\n\n")
+            let attributes: [NSAttributedString.Key: Any] = [
+                .font: UIFont.boldSystemFont(ofSize: 24),
+                .foregroundColor: UIColor.init(named: "kombuGreen") as Any]
+            let name = NSAttributedString(string: assessment!.getAssessmentName(), attributes: attributes)
+            text.append(name)
+            assessmentNameLabel.attributedText = text
         }
     }
 
