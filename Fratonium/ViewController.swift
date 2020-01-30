@@ -62,13 +62,7 @@ class ViewController: UIViewController {
         Note that this is where self.assessment is checked for nil so that it does not need to be done elsewhere **/
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        do {
-            try assessment = Assessment()
-        } catch {
-            // If we are unable to create an assessment then we will leave here with it nil.  Since the UI is not initialized at this point
-            // we can't display anything to the user so leave that for later
-            assessment = nil
-        }
+        
         if assessment == nil {
             let alertController = UIAlertController(title: "Initialization error", message: "Unable to load assessment data", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -78,7 +72,6 @@ class ViewController: UIViewController {
         }
     }
 
-    
     //--------------------------------------
     //MARK: UI actions
     //--------------------------------------
@@ -152,11 +145,12 @@ class ViewController: UIViewController {
     }
     
     func resetScoreLabels() {
-        let score = String(assessment!.computeScore())
-        scoreLabel.text = score
-        resultLabel.text = score
+        let scoreInt = assessment!.computeScore()
+        let scoreStr = String(scoreInt)
         
-        let scoreInt: Int = Int(score)!
+        scoreLabel.text = scoreStr
+        resultLabel.text = scoreStr
+        
         let color: UIColor
         switch scoreInt {
         case 0..<assessment!.caution:

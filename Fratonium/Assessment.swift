@@ -59,7 +59,7 @@ class Assessment {
                     return question
                 } else {
                     //An empty question set for a new category.  Something is wrong
-                    //TODO: error handler
+                    print("Invalid assessment data: A category does not contain any questions")
                     return nil
                 }
             } else {
@@ -113,7 +113,6 @@ class Assessment {
             }
         }
     }
-    
 }
 
 //=====================================
