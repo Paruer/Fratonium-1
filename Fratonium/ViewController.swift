@@ -32,8 +32,8 @@ class ViewController: UIViewController {
     //--------------------------------------
     //MARK: Programmatic properties
     //--------------------------------------
-    /** assessment is optional because it relies on a JSON file that could fail to load. We check during viewDidAppear to make sure it is initialized so other parts of the program can use forced unwrapping. */
-    var assessment: Assessment?
+    /** assessment is an implicitly unwrapped optional because it relies on a JSON file that could fail to load but we check during viewDidAppear to make sure it is initialized and if not we block further use of the app */
+    var assessment: Assessment!
     var currentQuestion: Question?
     
     /** assessment must be initialized here otherwise we get a complier error. Since we have no way to alert the user at this point we have to be
@@ -64,17 +64,14 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         
         if assessment == nil {
-            let alertController = UIAlertController(title: "Initialization error", message: "Unable to load assessment data", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alertController, animated: true, completion: nil)
-            //TODO: Close app after OK selected
+            showUnableToLoadMessage()
         } else {
             // Set the name of the assessment on the start view
             let text = NSMutableAttributedString(string: "Currently installed assessment:\n\n")
             let attributes: [NSAttributedString.Key: Any] = [
                 .font: UIFont.boldSystemFont(ofSize: 24),
                 .foregroundColor: UIColor.init(named: "kombuGreen") as Any]
-            let name = NSAttributedString(string: assessment!.getAssessmentName(), attributes: attributes)
+            let name = NSAttributedString(string: assessment.getAssessmentName(), attributes: attributes)
             text.append(name)
             assessmentNameLabel.attributedText = text
         }
@@ -84,10 +81,14 @@ class ViewController: UIViewController {
     //MARK: UI actions
     //--------------------------------------
     @IBAction func startAssessment(sender: UIButton) {
-        pageView.isHidden = false
-        startView.isHidden = true
-        resultView.isHidden = true
-        displayNextQuestion()
+        if assessment == nil {
+            showUnableToLoadMessage()
+        } else {
+            pageView.isHidden = false
+            startView.isHidden = true
+            resultView.isHidden = true
+            displayNextQuestion()
+        }
     }
     
     @IBAction func questionSelected(sender: UIButton) {
@@ -106,18 +107,18 @@ class ViewController: UIViewController {
     }
     
     @IBAction func resetAssessment(sender: UIButton) {
-        assessment!.resetAssessment()
+        assessment.resetAssessment()
         displayNextQuestion()
     }
     
     @IBAction func backToStart(sender: UIButton) {
-        assessment!.backToStart()
+        assessment.backToStart()
         displayNextQuestion()
     }
     
     /** Called when the Done button on the ResultView is pressed */
     @IBAction func assessmentComplete(sender: UIButton) {
-        assessment!.resetAssessment()
+        assessment.resetAssessment()
         startView.isHidden = false
         pageView.isHidden = true
         resultView.isHidden = true
@@ -126,10 +127,16 @@ class ViewController: UIViewController {
     //--------------------------------------
     //MARK: Helper functions
     //--------------------------------------
+    func showUnableToLoadMessage () {
+        let alertController = UIAlertController(title: "Initialization error", message: "Unable to load assessment data", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
+    
     func displayNextQuestion() {
-        if let q = assessment!.getNextQuestion() {
+        if let q = assessment.getNextQuestion() {
             currentQuestion = q
-            categoryLabel.text = assessment!.currentCategory.name
+            categoryLabel.text = assessment.currentCategory.name
             questionLabel.text = q.name
             let buttons = [firstButton, secondButton, thirdButton]
             for i in 0...2 {
@@ -153,7 +160,7 @@ class ViewController: UIViewController {
     }
     
     func resetScoreLabels() {
-        let scoreInt = assessment!.computeScore()
+        let scoreInt = assessment.computeScore()
         let scoreStr = String(scoreInt)
         
         scoreLabel.text = scoreStr
@@ -161,9 +168,9 @@ class ViewController: UIViewController {
         
         let color: UIColor
         switch scoreInt {
-        case 0..<assessment!.caution:
+        case 0..<assessment.caution:
             color = UIColor.green
-        case assessment!.caution..<assessment!.highRisk:
+        case assessment.caution..<assessment.highRisk:
             color = UIColor.yellow
         default:
             color = UIColor.red

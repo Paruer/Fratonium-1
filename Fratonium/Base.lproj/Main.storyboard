@@ -34,8 +34,9 @@
                                             <constraint firstAttribute="height" constant="150" id="sCC-nb-qBg"/>
                                         </constraints>
                                         <attributedString key="attributedText">
-                                            <fragment content="assessment name missing">
+                                            <fragment content="There was a problem loading the assessment">
                                                 <attributes>
+                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <font key="NSFont" metaFont="system" size="17"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
