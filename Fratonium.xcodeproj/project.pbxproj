@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C8800FE23E38A6B0039A953 /* TCE.json in Resources */ = {isa = PBXBuildFile; fileRef = 4C8800FD23E38A6B0039A953 /* TCE.json */; };
+		4C88010023E3B9EB0039A953 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8800FF23E3B9EB0039A953 /* Log.swift */; };
 		4CEA0073231B14E7003EF294 /* Test.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CEA0072231B14E7003EF294 /* Test.json */; };
 		4CEAFFAD231966FF003EF294 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEAFFAC231966FF003EF294 /* AppDelegate.swift */; };
 		4CEAFFAF231966FF003EF294 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CEAFFAE231966FF003EF294 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		4C8800FD23E38A6B0039A953 /* TCE.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TCE.json; sourceTree = "<group>"; };
+		4C8800FF23E3B9EB0039A953 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		4CEA0072231B14E7003EF294 /* Test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Test.json; sourceTree = "<group>"; };
 		4CEAFFA9231966FF003EF294 /* Fratonium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fratonium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CEAFFAC231966FF003EF294 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				4CEAFFB523196701003EF294 /* LaunchScreen.storyboard */,
 				4CEAFFB823196701003EF294 /* Info.plist */,
 				4CEAFFBE2319C822003EF294 /* Assessment.swift */,
+				4C8800FF23E3B9EB0039A953 /* Log.swift */,
 			);
 			path = Fratonium;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			files = (
 				4CEAFFBF2319C822003EF294 /* Assessment.swift in Sources */,
 				4CEAFFAF231966FF003EF294 /* ViewController.swift in Sources */,
+				4C88010023E3B9EB0039A953 /* Log.swift in Sources */,
 				4CEAFFAD231966FF003EF294 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import os
 
 class Assessment {
     //private let jsonFilename: String = "Test"
@@ -25,31 +26,26 @@ class Assessment {
      The initializer throws an error if it cannot load and parse the JSON containing the assessment data
     */
     init () throws {
-        do {
-            let url = Bundle.main.url(forResource: jsonFilename, withExtension: "json")
-            if url == nil {
-                print("URL provided does not exist")
-                throw URLError(URLError.badURL)
-            }
-            let json = try Data(contentsOf: url!)
-            let decoder = JSONDecoder()
-            assessmentData = try decoder.decode(AssessmentData.self, from: json)
-            caution = assessmentData.caution
-            highRisk = assessmentData.highRisk
-            categories = assessmentData.categories
-            categoryIterator = categories.makeIterator()
-            currentCategory = categoryIterator.next()!
-            questionIterator = currentCategory.questions.makeIterator()
-            for category in categories {
-                for question in category.questions {
-                    for answer in question.answers {
-                        answers.append(answer)
-                    }
+        let url = Bundle.main.url(forResource: jsonFilename, withExtension: "json")
+        if url == nil {
+            os_log("Unable to load resource '%{public}s'", log: Log.assessment, type: .error, jsonFilename)
+            throw URLError(URLError.badURL)
+        }
+        let json = try Data(contentsOf: url!)
+        let decoder = JSONDecoder()
+        assessmentData = try decoder.decode(AssessmentData.self, from: json)
+        caution = assessmentData.caution
+        highRisk = assessmentData.highRisk
+        categories = assessmentData.categories
+        categoryIterator = categories.makeIterator()
+        currentCategory = categoryIterator.next()!
+        questionIterator = currentCategory.questions.makeIterator()
+        for category in categories {
+            for question in category.questions {
+                for answer in question.answers {
+                    answers.append(answer)
                 }
             }
-        } catch {
-            print("Error initializing Assessment = \(error)")
-            throw error
         }
     }
     
@@ -65,7 +61,7 @@ class Assessment {
                     return question
                 } else {
                     //An empty question set for a new category.  Something is wrong
-                    print("Invalid assessment data: A category does not contain any questions")
+                    os_log("Invalid assessment data: Category '%{public}s' does not contain any questions", log: Log.assessment, type: .error, category.name)
                     return nil
                 }
             } else {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os
 
 class ViewController: UIViewController {
 
@@ -42,6 +43,7 @@ class ViewController: UIViewController {
         do {
             try assessment = Assessment()
         } catch {
+            os_log("Exception thrown by Assessment during initialization. Error: %{public}s", log: Log.controller, type: .error, error.localizedDescription)
             assessment = nil
         }
         super.init(coder: aDecoder)
@@ -92,18 +94,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func questionSelected(sender: UIButton) {
-        if let q = currentQuestion {
-            if sender == firstButton {
-                q.selectAnswer(0)
-            } else if sender == secondButton {
-                q.selectAnswer(1)
-            } else if sender == thirdButton {
-                q.selectAnswer(2)
-            }
-            displayNextQuestion()
+        /** Force unwrap currentQuestion because it really cannot be nil here: the answer buttons cannot be created if it is*/
+        if sender == firstButton {
+            currentQuestion!.selectAnswer(0)
+        } else if sender == secondButton {
+            currentQuestion!.selectAnswer(1)
+        } else if sender == thirdButton {
+            currentQuestion!.selectAnswer(2)
         }
-        //TODO: If the current question is nil we have a genuine error case since the display next question function is supposed
-        // to transition to the final view.  Need to figure out proper error response here
+        displayNextQuestion()
     }
     
     @IBAction func resetAssessment(sender: UIButton) {
