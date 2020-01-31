@@ -41,7 +41,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="caravan" width="979" height="900"/>
+        <image name="caravan" width="1443" height="1199"/>
         <image name="title" width="301" height="63"/>
     </resources>
 </document>

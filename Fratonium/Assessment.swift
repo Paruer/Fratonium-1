@@ -11,7 +11,7 @@ import os
 
 class Assessment {
     //private let jsonFilename: String = "Test"
-    private let jsonFilename: String = "TCEa"
+    private let jsonFilename: String = "TCE"
     private let assessmentData: AssessmentData
     private let categories: [Category]
     private var categoryIterator: IndexingIterator<[Category]>
