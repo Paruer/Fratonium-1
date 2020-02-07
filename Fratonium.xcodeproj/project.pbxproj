@@ -22,7 +22,7 @@
 		4C8800FD23E38A6B0039A953 /* TCE.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TCE.json; sourceTree = "<group>"; };
 		4C8800FF23E3B9EB0039A953 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		4CEA0072231B14E7003EF294 /* Test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Test.json; sourceTree = "<group>"; };
-		4CEAFFA9231966FF003EF294 /* Fratonium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fratonium.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CEAFFA9231966FF003EF294 /* FRATonium.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FRATonium.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CEAFFAC231966FF003EF294 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CEAFFAE231966FF003EF294 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4CEAFFB1231966FF003EF294 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		4CEAFFAA231966FF003EF294 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4CEAFFA9231966FF003EF294 /* Fratonium.app */,
+				4CEAFFA9231966FF003EF294 /* FRATonium.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,7 +93,7 @@
 			);
 			name = Fratonium;
 			productName = Fratonium;
-			productReference = 4CEAFFA9231966FF003EF294 /* Fratonium.app */;
+			productReference = 4CEAFFA9231966FF003EF294 /* FRATonium.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -306,8 +306,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mp.Fratonium;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = mp.fratonium;
+				PRODUCT_NAME = FRATonium;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -325,8 +325,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = mp.Fratonium;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = mp.fratonium;
+				PRODUCT_NAME = FRATonium;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

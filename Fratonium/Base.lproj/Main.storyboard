@@ -20,13 +20,13 @@
                                 <rect key="frame" x="-8" y="0.0" width="383" height="667"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="hy9-nd-QW7" userLabel="StartStackView">
-                                <rect key="frame" x="37.5" y="70.5" width="300" height="526"/>
+                                <rect key="frame" x="37.5" y="102" width="300" height="463"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="cG1-ga-vw1">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="126"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="63"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="O2u-ve-Bw8" userLabel="assessmentNameLabel">
-                                        <rect key="frame" x="0.0" y="226" width="300" height="150"/>
+                                        <rect key="frame" x="0.0" y="163" width="300" height="150"/>
                                         <color key="backgroundColor" name="manatee"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="sCC-nb-qBg"/>
@@ -43,7 +43,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="MyI-Dx-jPa" userLabel="ButtonsStackView">
-                                        <rect key="frame" x="0.0" y="476" width="300" height="50"/>
+                                        <rect key="frame" x="0.0" y="413" width="300" height="50"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3x8-ok-5ML">
                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
@@ -85,7 +85,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SaO-Oi-nGr" userLabel="QuestionStackView">
                                         <rect key="frame" x="0.0" y="60" width="375" height="497"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puv-DR-wpT" userLabel="questionLabel">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puv-DR-wpT" userLabel="questionLabel">
                                                 <rect key="frame" x="10" y="10" width="355" height="112"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
