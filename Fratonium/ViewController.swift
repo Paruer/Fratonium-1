@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var startLabelView: UIView! // The labels in the starting view
     @IBOutlet weak var resultLabel: UILabel! // The label on the result page
     @IBOutlet weak var assessmentNameLabel: UILabel! // On the start view
+    @IBOutlet weak var timeLabel: UILabel! // The date and time display on the result page
     
     //--------------------------------------
     //MARK: Programmatic properties
@@ -151,6 +152,10 @@ class ViewController: UIViewController {
         } else {
             // There are no more questions so show the results view
             currentQuestion = nil
+            let dateFormatter = DateFormatter()
+            dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+            dateFormatter.dateFormat = "MMM dd YYYY' @ 'HHmm'z'"
+            timeLabel.text = dateFormatter.string(from: Date())
             resultView.isHidden = false
             startView.isHidden = true
             pageView.isHidden = true
